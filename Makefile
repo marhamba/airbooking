@@ -8,7 +8,10 @@ AR		= ar csr
 .cpp.o :
 	${CC} ${CFLAGS} -cpp $< -o ${<:.cpp=.o}
 
-all: ${NAME}
+$(NAME): ${OBJS}
+	${AR} course.a ${OBJS}
+
+all: ${NAME} && ./a.out
 
 clean:
 	${RM} ${OBJS}
