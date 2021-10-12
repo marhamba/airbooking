@@ -1,4 +1,4 @@
-#include "include.hpp"
+#include "../include.hpp"
 
 int tty_mode = 0;
 struct termios orig_tty;

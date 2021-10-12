@@ -5,19 +5,19 @@ SRCS	= $(shell find "./srcs" -name "*cpp")
 OBJS	= ${SRCS:.c=.o}
 AR		= ar csr
 
-.cpp.o :
-	${CC} ${CFLAGS} -cpp $< -o ${<:.cpp=.o}
+# .cpp.o :
+# 	${CC} ${CFLAGS} -cpp $< -o ${<:.cpp=.o}
 
 $(NAME): ${OBJS}
 	${AR} course.a ${OBJS}
 
-all: ${NAME} && ./a.out
+all: ${NAME}
 
 clean:
 	${RM} ${OBJS}
 
-fclean: clean
-	${RM} ${NAME}
+fclean: clean #DON'T DO THIS
+	${RM} ${NAME} 
 
 re: fclean all
 
