@@ -1,24 +1,28 @@
-NAME	= course.a
 CC		= g++
+SRCS	= $(shell find "./Src" -name "*cpp")
+OBJS	= ${SRCS:.cpp=.o}
 RM		= rm -f
-SRCS	= $(shell find "./srcs" -name "*cpp")
-OBJS	= ${SRCS:.c=.o}
+NAME	= ./course.a
 AR		= ar csr
+# OBJS	= $(shell find "./Src" -name "*.o")
 
-# .cpp.o :
-# 	${CC} ${CFLAGS} -cpp $< -o ${<:.cpp=.o}
+.cpp.o :
+	${CC} -c $< -o ${<:.cpp=.o}
+	
+$(NAME) : ${OBJS}
+	@${AR} course.a ${OBJS}
 
-$(NAME): ${OBJS}
-	${AR} course.a ${OBJS}
+all : ${NAME}
 
-all: ${NAME}
+compile : all 
+	${CC} ${NAME} && ./a.out
 
-clean:
-	${RM} ${OBJS}
+clean : 
+	@${RM} ${OBJS}
 
-fclean: clean #DON'T DO THIS
-	${RM} ${NAME} 
+fclean : clean
+	@${RM} ${NAME} a.out
 
-re: fclean all
+re : fclean all
 
-.PHONY: all clean fclean re .cpp.o
+.PHONY: all clean fclean re .c.o
