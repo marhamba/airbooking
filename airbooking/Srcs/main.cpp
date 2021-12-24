@@ -1,10 +1,12 @@
-#include "../include.hpp"
+#include "../Includes/include.hpp"
 
-void	constructor(t_helps *helps)
-{
-	helps->sign = 0;
-
-}
+// void	constructor(t_helps *helps)
+// {
+// 	helps->name = NULL;
+// 	helps->surename = NULL;
+// 	helps->time = NULL;
+// 	helps->where = NULL;
+// }
 
 void    starting_menu(t_helps *helps)
 {
@@ -52,14 +54,10 @@ void    starting_menu(t_helps *helps)
 			case ENTER:
 			{ 
 				if (menu_point == 1)
-				{  
-					if (helps->sign_in == true)
-					{
-						
-					}
+				{
 					menu_point = 0;
                     system("clear");
-					my_bookings(helps);
+					ft_register(helps);
                     // std::cout<<"New bookin menu\n";
 					break;
 				}
@@ -67,7 +65,7 @@ void    starting_menu(t_helps *helps)
 				if (menu_point == 2)   
 				{
 					system("clear");			
-					std::cout<<"Flights menu\n";
+					ft_login(helps);
                     break;
 				}  
 
@@ -118,7 +116,7 @@ void    starting_menu(t_helps *helps)
 int main()
 {
 	t_helps *helps;
-	constructor(helps);
+	// constructor(*helps);
     starting_menu(helps);
 	return (0);
 }

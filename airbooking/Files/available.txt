@@ -1,0 +1,10 @@
+Yerevan		Kiev		03:50
+Yerevan		Moscow		05:15
+Yerevan		Laos		07:00
+Yerevan		Kiev		07:00
+Yerevan		Paris		07:45
+Yerevan		London		08:25
+Yerevan		Stambul		08:50
+Yerevan		Rome		09:15
+Yerevan		Berlin		14:40
+Yerevan		Moscow		15:00

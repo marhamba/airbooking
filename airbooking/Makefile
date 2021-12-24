@@ -1,14 +1,14 @@
 CC		= g++
-SRCS	= $(shell find "./Src" -name "*cpp")
+OBJ		= ${shell find "./Objs" -name "*.o"}
+SRCS	= $(shell find "./Srcs" -name "*cpp")
 OBJS	= ${SRCS:.cpp=.o}
 RM		= rm -f
 NAME	= ./course.a
 AR		= ar csr
-# OBJS	= $(shell find "./Src" -name "*.o")
 
 .cpp.o :
 	${CC} -c $< -o ${<:.cpp=.o}
-	
+
 $(NAME) : ${OBJS}
 	@${AR} course.a ${OBJS}
 
