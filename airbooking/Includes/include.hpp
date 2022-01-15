@@ -23,7 +23,6 @@ typedef struct  helps
     char    where[15];
     char    time[11];
     bool    loged;
-    // char    *buffer;
 }               t_helps;
 
 
@@ -43,6 +42,7 @@ void    print_logs();
 void    ft_login(t_helps *helps);
 void    constructor(t_helps helps);
 void    check_requests(t_helps *helps);
+void    ft_flights();
 
 
 #endif //inclue_hpp

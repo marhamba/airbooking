@@ -2,7 +2,7 @@
 
 // void	constructor(t_helps *helps)
 // {
-// 	helps->name = NULL;
+// 	helps->name = nullptr;
 // 	helps->surename = NULL;
 // 	helps->time = NULL;
 // 	helps->where = NULL;
@@ -65,14 +65,14 @@ void    starting_menu(t_helps *helps)
 				if (menu_point == 2)   
 				{
 					system("clear");			
-					ft_login(helps);
+					// ft_login(helps);
                     break;
 				}  
 
 				if (menu_point == 3)
 				{
                     system("clear");
-                    // print_about();
+                    ft_flights();
 					break;
 				}
 
@@ -103,11 +103,6 @@ void    starting_menu(t_helps *helps)
 				normal();
 				return ;
 			}
-			// case PREV :
-			// {
-			// 	starting_menu();
-			// 	break ;
-			// }
 		}
 	}	
 	normal();
